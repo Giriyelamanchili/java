@@ -26,3 +26,7 @@ ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
 
 # Define default command.
 CMD ["bash"]
+RUN wget wget http://redrockdigimark.com/apachemirror/tomcat/tomcat-8/v8.5.24/bin/apache-tomcat-8.5.24-deployer.tar.gz
+RUN tar xvzf apache-tomcat-8.5.24-deployer.tar.gz
+RUN mv apache-tomcat-8.5.24 tomcat8
+CMD ["tomcat8/bin/catlina.sh","run"]
